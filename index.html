@@ -537,8 +537,11 @@ body {
   max-width: 1320px; margin: 0 auto; padding: 0 40px;
 }
 .expertise-header { text-align: center; margin-bottom: 80px; }
+/* BEFORE */
+grid-template-columns: 1fr 1fr;
+
 /* AFTER */
-.expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+grid-template-columns: repeat(3, 1fr);
 .exp-panel {
   padding: 56px 48px; border-radius: 8px;
   background: rgba(255,255,255,0.02); border: 1px solid var(--line);
