@@ -1039,12 +1039,47 @@ body {
         <p>We'll respond within 24 hours.</p>
       </div>
       <div class="form-row">
-        <div class="form-group" style="margin-bottom:0"><label>Full Name</label><input type="text" placeholder="John Doe"></div>
-        <div class="form-group" style="margin-bottom:0"><label>Email</label><input type="email" placeholder="john@company.com"></div>
+        <div class="form-group" style="margin-bottom:0"><label>Full Name</label><input type="text" name="name" placeholder="John Doe"></div>
+        <div class="form-group" style="margin-bottom:0"><label>Email</label><input type="email" name="email" placeholder="john@company.com"></div>
       </div>
-      <div class="form-group"><label>Company</label><input type="text" placeholder="Your company name"></div>
-      <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your project or inquiry..."></textarea></div>
-      <div class="form-submit"><button class="cta-primary" onclick="handleSubmit(this)">Send Message <span class="arrow">&#8594;</span></button></div>
+      <div class="form-group"><label>Company</label><input type="text" name="company" placeholder="Your company name"></div>
+      <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us about your project or inquiry..."></textarea></div>
+      async function handleSubmit(btn) {
+  const form = btn.closest('.contact-form');
+  const data = {
+    name: form.querySelector('[name="name"]').value,
+    email: form.querySelector('[name="email"]').value,
+    company: form.querySelector('[name="company"]').value,
+    message: form.querySelector('[name="message"]').value,
+  };
+  btn.innerHTML = 'Sending...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('https://formspree.io/f/meelzwgo', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (res.ok) {
+      btn.innerHTML = 'Message Sent! &#10003;';
+      btn.style.background = '#2ecc71';
+      form.querySelectorAll('input, textarea').forEach(el => el.value = '');
+      setTimeout(() => {
+        btn.innerHTML = 'Send Message <span class="arrow">&#8594;</span>';
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 4000);
+    } else { throw new Error(); }
+  } catch {
+    btn.innerHTML = 'Failed — Try Again';
+    btn.style.background = '#e74c3c';
+    btn.disabled = false;
+    setTimeout(() => {
+      btn.innerHTML = 'Send Message <span class="arrow">&#8594;</span>';
+      btn.style.background = '';
+    }, 3000);
+  }
+}&#8594;</span></button></div>
     </div>
   </div>
 </section>
