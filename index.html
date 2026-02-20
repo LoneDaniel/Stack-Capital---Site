@@ -1218,51 +1218,43 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const t = document.querySelector(this.getAttribute('href'));
     if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
+   
 /* ===== FORM SUBMIT ===== */
-const contactForm = document.getElementById('contactForm');
-const submitBtn = document.getElementById('submitBtn');
-const formStatus = document.getElementById('formStatus');
-
-if (contactForm) {
-  contactForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = 'Sending&hellip;';
-    formStatus.textContent = '';
-    formStatus.style.color = 'var(--coral-glow)';
-
-    const data = new FormData(contactForm);
-    try {
-      const res = await fetch(contactForm.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        submitBtn.innerHTML = 'Message Sent &#10003;';
-        submitBtn.style.background = '#2ecc71';
-        formStatus.textContent = "Thank you! We'll be in touch soon.";
-        contactForm.reset();
-        setTimeout(() => {
-          submitBtn.innerHTML = 'Send Message <span class="arrow">&#8594;</span>';
-          submitBtn.style.background = '';
-          submitBtn.disabled = false;
-          formStatus.textContent = '';
-        }, 4000);
-      } else {
-        const json = await res.json();
-        formStatus.style.color = '#e74c3c';
-        formStatus.textContent = json.errors ? json.errors.map(e => e.message).join(', ') : 'Oops! Something went wrong. Please try again.';
-        submitBtn.innerHTML = 'Send Message <span class="arrow">&#8594;</span>';
-        submitBtn.disabled = false;
-      }
-    } catch (err) {
-      formStatus.style.color = '#e74c3c';
-      formStatus.textContent = 'Network error. Please check your connection and try again.';
-      submitBtn.innerHTML = 'Send Message <span class="arrow">&#8594;</span>';
-      submitBtn.disabled = false;
-    }
-  });
+async function handleSubmit(btn) {
+  const form = btn.closest('.contact-form');
+  const data = {
+    name: form.querySelector('[name="name"]').value,
+    email: form.querySelector('[name="email"]').value,
+    company: form.querySelector('[name="company"]').value,
+    message: form.querySelector('[name="message"]').value,
+  };
+  btn.innerHTML = 'Sending...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('https://formspree.io/f/meelzwgo', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (res.ok) {
+      btn.innerHTML = 'Message Sent! &#10003;';
+      btn.style.background = '#2ecc71';
+      form.querySelectorAll('input, textarea').forEach(el => el.value = '');
+      setTimeout(() => {
+        btn.innerHTML = 'Send Message <span class="arrow">&#8594;</span>';
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 4000);
+    } else { throw new Error(); }
+  } catch {
+    btn.innerHTML = 'Failed — Try Again';
+    btn.style.background = '#e74c3c';
+    btn.disabled = false;
+    setTimeout(() => {
+      btn.innerHTML = 'Send Message <span class="arrow">&#8594;</span>';
+      btn.style.background = '';
+    }, 3000);
+  }
 }
    // ===== BACKGROUND PARTICLE NETWORK =====
 (function() {
