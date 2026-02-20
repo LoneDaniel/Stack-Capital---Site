@@ -537,8 +537,7 @@ body {
   max-width: 1320px; margin: 0 auto; padding: 0 40px;
 }
 .expertise-header { text-align: center; margin-bottom: 80px; }
-/* AFTER */
-.expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 .exp-panel {
   padding: 56px 48px; border-radius: 8px;
   background: rgba(255,255,255,0.02); border: 1px solid var(--line);
@@ -728,10 +727,7 @@ body {
   .nav-links.active li:nth-child(3) { animation: fadeIn 0.15s 0.1s ease forwards !important; }
   .nav-links.active li:nth-child(4) { animation: fadeIn 0.15s 0.15s ease forwards !important; }
   .nav-links.active li:nth-child(5) { animation: fadeIn 0.15s 0.2s ease forwards !important; }
-/* AFTER */
-.hero-heading { font-size: clamp(2.4rem, 8vw, 3.5rem); }
-.hero-heading .word { display: inline; }
-.hero-tag { white-space: nowrap; letter-spacing: 3px; font-size: 0.62rem; }
+  .hero-heading { font-size: clamp(2.4rem, 8vw, 3.5rem); }
   .hero-ctas { flex-direction: column; align-items: stretch; }
   .services-grid { grid-template-columns: 1fr; }
   .partner-grid { grid-template-columns: 1fr 1fr; }
@@ -750,7 +746,7 @@ body {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-2QB4TPWSZK');
-</script>   
+</script>
 </head>
 <body>
 <canvas id="bgCanvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.35;"></canvas>
@@ -805,10 +801,10 @@ body {
       <a href="#services" class="cta-secondary">Explore Services</a>
     </div>
   </div>
-<!-- AFTER — remove the text, keep only the line -->
-<div class="scroll-hint">
-  <div class="scroll-line"></div>
-</div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <div class="scroll-line"></div>
+  </div>
 </section>
 
 <!-- TRUST BAR -->
@@ -966,10 +962,6 @@ body {
 </section>
 
 <!-- PARTNERS -->
-  </div>
-</section>
-
-<!-- PARTNERS -->
 <section class="partners-section" id="partners">
   <div class="partners-inner">
     <div class="partners-header">
@@ -982,9 +974,8 @@ body {
         <div class="partner-grid">
           <div class="partner-pill">Affinity Human Capital</div>
           <div class="partner-pill">Veela Mining Solutions</div>
-          <div class="partner-pill">Chepa Corporate Services</div>
+          <div class="partner-pill">&#197; Design Studio</div>
           <div class="partner-pill">Voli Engineering</div>
-           <div class="partner-pill">Gavanni Insure</div>
           <div class="partner-pill">Superbia Machining</div>
         </div>
       </div>
@@ -992,10 +983,8 @@ body {
         <div class="region-title">Botswana</div>
         <div class="partner-grid">
           <div class="partner-pill">Shedol Fragrances</div>
-           <div class="partner-pill">Calm Tissue</div>
           <div class="partner-pill">Pantone Reign</div>
-           <div class="partner-pill">Petrohyper</div>
-          <div class="partner-pill">Bloom Sanitary Pads</div>
+          <div class="partner-pill">Bloom</div>
           <div class="partner-pill">The Bulb World</div>
         </div>
       </div>
@@ -1015,7 +1004,7 @@ body {
       <div class="contact-card sr sr-d1">
         <div class="cc-icon">&#128205;</div>
         <h4>South Africa</h4>
-        <p>676 Gallagher Ave,<br>The Link, Block A, Ground Floor<br>Waterfall, Midrand<br>Gauteng 1684</p>
+        <p>Waterfall, Midrand<br>Gauteng 1684</p>
       </div>
       <div class="contact-card sr sr-d2">
         <div class="cc-icon">&#128205;</div>
@@ -1025,31 +1014,27 @@ body {
       <div class="contact-card sr sr-d3">
         <div class="cc-icon">&#128222;</div>
         <h4>Contact</h4>
-        <!-- AFTER -->
-<p><a href="mailto:info@stackcapital.co.za">info@stackcapital.co.za</a><br>
+        <p><a href="mailto:info@stackcapital.co.za">info@stackcapital.co.za</a><br>
 <a href="https://wa.me/27060847735" target="_blank" style="color:inherit; display:inline-flex; align-items:center; gap:6px;">
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   +27 060 847 1735 (SA)
 </a></p>
       </div>
     </div>
-<form class="contact-form sr" id="contactForm" action="https://formspree.io/f/meelzwgo" method="POST">
+    <div class="contact-form sr">
       <div class="contact-form-header">
         <h3>Send Us a Message</h3>
         <p>We'll respond within 24 hours.</p>
       </div>
-      <input type="hidden" name="_subject" value="New enquiry from Stack Capital website">
       <div class="form-row">
-        <div class="form-group" style="margin-bottom:0"><label for="fc-name">Full Name</label><input type="text" id="fc-name" name="name" placeholder="John Doe" required></div>
-        <div class="form-group" style="margin-bottom:0"><label for="fc-email">Email</label><input type="email" id="fc-email" name="email" placeholder="john@company.com" required></div>
+        <div class="form-group" style="margin-bottom:0"><label>Full Name</label><input type="text" name="name" placeholder="John Doe"></div>
+        <div class="form-group" style="margin-bottom:0"><label>Email</label><input type="email" name="email" placeholder="john@company.com"></div>
       </div>
-      <div class="form-group"><label for="fc-company">Company</label><input type="text" id="fc-company" name="company" placeholder="Your company name"></div>
-      <div class="form-group"><label for="fc-message">Message</label><textarea id="fc-message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea></div>
-      <div class="form-submit">
-        <button type="submit" class="cta-primary" id="submitBtn">Send Message <span class="arrow">&#8594;</span></button>
-        <p id="formStatus" style="margin-top:16px;font-size:0.85rem;min-height:20px;color:var(--coral-glow);"></p>
-      </div>
-    </form>   
+      <div class="form-group"><label>Company</label><input type="text" name="company" placeholder="Your company name"></div>
+      <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us about your project or inquiry..."></textarea></div>
+      <div class="form-submit"><button class="cta-primary" onclick="handleSubmit(this)">Send Message <span class="arrow">&#8594;</span></button></div>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -1066,7 +1051,7 @@ body {
       </ul>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Stack Capital. All rights reserved.</p>
+      <p>&copy; 2024 Stack Capital. All rights reserved.</p>
       <p><a href="https://www.stackcapital.co.za">www.stackcapital.co.za</a></p>
     </div>
   </div>
@@ -1218,7 +1203,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const t = document.querySelector(this.getAttribute('href'));
     if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
-   
+});
+
 /* ===== FORM SUBMIT ===== */
 async function handleSubmit(btn) {
   const form = btn.closest('.contact-form');
@@ -1256,7 +1242,8 @@ async function handleSubmit(btn) {
     }, 3000);
   }
 }
-   // ===== BACKGROUND PARTICLE NETWORK =====
+
+// ===== BACKGROUND PARTICLE NETWORK =====
 (function() {
   const canvas = document.getElementById('bgCanvas');
   const ctx = canvas.getContext('2d');
@@ -1296,12 +1283,10 @@ async function handleSubmit(btn) {
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
       p.update();
-      // Draw dot
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(${CORAL},${p.opacity})`;
       ctx.fill();
-      // Draw connecting lines
       for (let j = i + 1; j < particles.length; j++) {
         const q = particles[j];
         const dx = p.x - q.x, dy = p.y - q.y;
