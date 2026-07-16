@@ -8,3 +8,4 @@
 .brand-intro:before{z-index:0}.brand-intro>*{position:relative;z-index:1}
 .intro-page{min-height:100vh;height:100vh;overflow:hidden;background:#021426}.intro-page .brand-intro{width:100vw;height:100vh;min-height:100vh;background:#021426!important}.intro-page #particle-grid{display:none!important}
 .actions{flex-wrap:wrap}@media(max-width:700px){.actions>a{flex:1 1 220px;text-align:center}}
+@media(max-width:700px){.site-header{z-index:10}.site-header nav.open{z-index:20}.menu{position:relative;z-index:21;touch-action:manipulation}}
