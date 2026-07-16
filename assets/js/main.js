@@ -29,7 +29,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const cursor = { x: -1000, y: -1000, active: false };
   let particles = [];
   const buildGrid = () => {
-    const count = window.innerWidth < 700 ? 58 : 96;
+    const count = window.innerWidth < 700 ? 42 : 96;
     particles = Array.from({ length: count }, () => ({
       x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight,
       homeX: Math.random() * window.innerWidth, homeY: Math.random() * window.innerHeight,
@@ -38,9 +38,10 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     }));
   };
   const resize = () => {
-    canvas.width = window.innerWidth * devicePixelRatio; canvas.height = window.innerHeight * devicePixelRatio;
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+    canvas.width = window.innerWidth * pixelRatio; canvas.height = window.innerHeight * pixelRatio;
     canvas.style.width = `${window.innerWidth}px`; canvas.style.height = `${window.innerHeight}px`;
-    context.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0); buildGrid();
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0); buildGrid();
   };
   const draw = time => {
     context.clearRect(0, 0, window.innerWidth, window.innerHeight);
