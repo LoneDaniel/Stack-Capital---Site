@@ -3,7 +3,8 @@ const nav = document.querySelector('.site-header nav');
 menu?.addEventListener('click', () => nav.classList.toggle('open'));
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
-document.querySelector('.form')?.addEventListener('submit', event => {
+const demoForm = document.querySelector('.form');
+if (demoForm && !demoForm.hasAttribute('action')) demoForm.addEventListener('submit', event => {
   event.preventDefault();
   alert('Thank you — your message has been captured. Connect this form to your preferred email or CRM service before launch.');
 });
