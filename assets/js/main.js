@@ -1,6 +1,9 @@
 const menu = document.querySelector('.menu');
 const nav = document.querySelector('.site-header nav');
-menu?.addEventListener('click', () => nav.classList.toggle('open'));
+menu?.addEventListener('click', () => {
+  const isOpen = nav?.classList.toggle('open');
+  menu.setAttribute('aria-expanded', String(Boolean(isOpen)));
+});
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 const demoForm = document.querySelector('.form');
