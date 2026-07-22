@@ -1,8 +1,28 @@
+if (!document.querySelector('link[rel~="icon"]')) {
+  const favicon = document.createElement('link');
+  favicon.rel = 'icon';
+  favicon.type = 'image/png';
+  favicon.href = 'assets/images/stack-capital-emblem-transparent.png';
+  document.head.appendChild(favicon);
+}
+
 const menu = document.querySelector('.menu');
 const nav = document.querySelector('.site-header nav');
+const closeMenu = () => {
+  nav?.classList.remove('open');
+  menu?.setAttribute('aria-expanded', 'false');
+  menu?.setAttribute('aria-label', 'Open menu');
+};
+
 menu?.addEventListener('click', () => {
   const isOpen = nav?.classList.toggle('open');
   menu.setAttribute('aria-expanded', String(Boolean(isOpen)));
+  menu.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+});
+
+nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeMenu();
 });
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
