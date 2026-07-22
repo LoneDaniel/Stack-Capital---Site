@@ -8,6 +8,8 @@
 .brand-intro:before{z-index:0}.brand-intro>*{position:relative;z-index:1}
 .intro-page{min-height:100vh;height:100vh;overflow:hidden;background:#021426}.intro-page .brand-intro{width:100vw;height:100vh;min-height:100vh;background:#021426!important}.intro-page #particle-grid{display:none!important}
 .actions{flex-wrap:wrap}@media(max-width:700px){.actions>a{flex:1 1 220px;text-align:center}}
+/* Tablet navigation: use the compact, touch-friendly menu before links become crowded. */
+@media(max-width:900px){.site-header{height:72px;position:relative;z-index:10}.logo{width:175px}.site-header nav{display:none}.menu{display:block;margin-left:auto;background:none;border:0;color:#fff;font-size:10px!important;letter-spacing:1px;font-weight:800;position:relative;z-index:21;touch-action:manipulation}.site-header nav.open{display:flex;position:absolute;top:72px;left:0;right:0;padding:22px;background:var(--navy);flex-direction:column;align-items:flex-start;gap:18px;z-index:20;box-shadow:0 12px 20px #0005}}
 @media(max-width:700px){.site-header{z-index:10}.site-header nav.open{z-index:20}.menu{position:relative;z-index:21;touch-action:manipulation}}
 
 /* Editorial capabilities section */
