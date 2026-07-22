@@ -6,6 +6,9 @@
 /* Keep the mobile navigation above the animated background and easy to tap. */
 @media(max-width:850px){.site-header{position:relative;z-index:10}.site-header nav.open{z-index:20}.menu{position:relative;z-index:21;touch-action:manipulation}}
 
+/* Match the homepage behaviour on tablets so navigation never compresses or overflows. */
+@media(max-width:900px){.site-header{height:72px;position:relative;z-index:10}.logo{width:175px}.site-header nav{display:none}.menu{display:block;margin-left:auto;background:none;border:0;color:#fff;font-size:10px!important;letter-spacing:1px;font-weight:800;position:relative;z-index:21;touch-action:manipulation}.site-header nav.open{display:flex;position:absolute;top:72px;left:0;right:0;padding:22px;background:var(--navy);flex-direction:column;align-items:flex-start;gap:18px;z-index:20;box-shadow:0 12px 20px #0005}}
+
 /* Text-led interface: remove decorative markers and numbered labels. */
 .card>i,.service-card>i,.industry-card>i{display:none}.service-card>h3,.service-card>p,.industry-card>h3,.industry-card>p{margin-left:24px;margin-right:24px}.list li:before{content:none;margin:0}@media(max-width:850px){.menu{font-size:10px!important;letter-spacing:1px;font-weight:800}}
 
